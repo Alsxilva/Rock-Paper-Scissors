@@ -9,21 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    @IBAction func playersNameField(_ sender: UITextField) {
-    }
-    
-    @IBAction func playButton(_ sender: UIButton) {
-    }
-    
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        buttonPlayed.isEnabled = true
     }
     
+    @IBOutlet weak var playersNameInput: UITextField!
     
-
-
+    @IBOutlet weak var buttonPlayed: UIButton!
+    
+    @IBAction func userFilled(_ sender: UITextField) {
+        buttonPlayed.isEnabled = true
+        if (sender.text == ""){ buttonPlayed.isEnabled = false }
+    }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        print("Hola")
+    }
+    
 }
-

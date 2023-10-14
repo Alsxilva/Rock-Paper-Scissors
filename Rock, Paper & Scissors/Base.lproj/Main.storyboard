@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="jg8-Y9-voe">
             <objects>
-                <viewController id="b80-6W-Bvg" sceneMemberID="viewController">
+                <viewController id="b80-6W-Bvg" customClass="ViewController" customModule="Rock__Paper___Scissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kvF-Yi-oVl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Game">
                                         <attributes>
-                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="26"/>
                                             <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -34,7 +34,7 @@
                                     </fragment>
                                     <fragment content="Config">
                                         <attributes>
-                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="26"/>
                                             <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -42,12 +42,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DU-kY-E70">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DU-kY-E70">
                                 <rect key="frame" x="50" y="261" width="293" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="playersNameField:" destination="XwP-Oh-HV2" eventType="editingDidEnd" id="IAV-ot-7FR"/>
+                                    <action selector="userFilled:" destination="b80-6W-Bvg" eventType="valueChanged" id="q0H-rA-GUa"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyy-KM-vPd">
@@ -77,6 +78,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="PLAY!"/>
                                 <connections>
+                                    <action selector="buttonPressed:" destination="b80-6W-Bvg" eventType="touchUpInside" id="M6G-J5-uOx"/>
                                     <action selector="playButton:" destination="XwP-Oh-HV2" eventType="touchUpInside" id="0bv-O5-b9Q"/>
                                 </connections>
                             </button>
@@ -104,11 +106,15 @@
                             <constraint firstItem="dyy-KM-vPd" firstAttribute="top" secondItem="pLo-JK-ODw" secondAttribute="bottom" constant="50" id="zo1-in-acB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonPlayed" destination="6Pt-4m-rKl" id="KAG-PN-LlW"/>
+                        <outlet property="playersNameInput" destination="1DU-kY-E70" id="i9w-dh-CyX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0X2-02-ItF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="XwP-Oh-HV2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-828" y="4"/>
+            <point key="canvasLocation" x="-828.24427480916029" y="3.5211267605633805"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -123,7 +129,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Rock">
                                         <attributes>
-                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="26"/>
                                             <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -136,7 +142,7 @@
                                     </fragment>
                                     <fragment content="Paper">
                                         <attributes>
-                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="26"/>
                                             <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -149,7 +155,7 @@
                                     </fragment>
                                     <fragment content="or">
                                         <attributes>
-                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="26"/>
                                             <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -162,7 +168,7 @@
                                     </fragment>
                                     <fragment content="Scissors">
                                         <attributes>
-                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="26"/>
                                             <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
