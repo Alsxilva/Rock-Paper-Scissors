@@ -1,24 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b80-6W-Bvg">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="jg8-Y9-voe">
+            <objects>
+                <viewController id="b80-6W-Bvg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kvF-Yi-oVl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLo-JK-ODw">
+                                <rect key="frame" x="50" y="109" width="293" height="31"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Game">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Config">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DU-kY-E70">
+                                <rect key="frame" x="50" y="261" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="playersNameField:" destination="XwP-Oh-HV2" eventType="editingDidEnd" id="IAV-ot-7FR"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyy-KM-vPd">
+                                <rect key="frame" x="50" y="190" width="293" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIY-Ae-ENj">
+                                <rect key="frame" x="50" y="395" width="293" height="30"/>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="viewFlipsideBackgroundColor"/>
+                                <menu key="menu" id="1XK-OQ-kPu">
+                                    <menuOptions key="menuOptions" singleSelection="YES"/>
+                                    <children>
+                                        <command title="By Points" id="INa-Vm-3wR"/>
+                                        <command title="By Rounds" id="7PK-A4-mwR"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Game Mode">
+                                    <color key="titleColor" systemColor="lightTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pt-4m-rKl">
+                                <rect key="frame" x="162" y="683" width="69" height="35"/>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="PLAY!"/>
+                                <connections>
+                                    <action selector="playButton:" destination="XwP-Oh-HV2" eventType="touchUpInside" id="0bv-O5-b9Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rvl-DQ-wq1"/>
+                        <color key="backgroundColor" systemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dyy-KM-vPd" firstAttribute="centerX" secondItem="kvF-Yi-oVl" secondAttribute="centerX" id="0dN-TJ-54k"/>
+                            <constraint firstItem="pLo-JK-ODw" firstAttribute="centerX" secondItem="kvF-Yi-oVl" secondAttribute="centerX" id="0pS-WE-7A0"/>
+                            <constraint firstItem="fIY-Ae-ENj" firstAttribute="centerX" secondItem="kvF-Yi-oVl" secondAttribute="centerX" id="Aoh-Nl-183"/>
+                            <constraint firstItem="rvl-DQ-wq1" firstAttribute="trailing" secondItem="fIY-Ae-ENj" secondAttribute="trailing" constant="50" id="CrE-Eg-npR"/>
+                            <constraint firstItem="1DU-kY-E70" firstAttribute="leading" secondItem="rvl-DQ-wq1" secondAttribute="leading" constant="50" id="D7E-e5-c84"/>
+                            <constraint firstItem="1DU-kY-E70" firstAttribute="top" secondItem="dyy-KM-vPd" secondAttribute="bottom" constant="50" id="DgO-0P-e1t"/>
+                            <constraint firstItem="pLo-JK-ODw" firstAttribute="leading" secondItem="rvl-DQ-wq1" secondAttribute="leading" constant="50" id="O2w-lb-zZc"/>
+                            <constraint firstItem="rvl-DQ-wq1" firstAttribute="trailing" secondItem="1DU-kY-E70" secondAttribute="trailing" constant="50" id="QsW-d7-II8"/>
+                            <constraint firstItem="6Pt-4m-rKl" firstAttribute="centerX" secondItem="kvF-Yi-oVl" secondAttribute="centerX" id="TAs-ZF-8uP"/>
+                            <constraint firstItem="dyy-KM-vPd" firstAttribute="leading" secondItem="rvl-DQ-wq1" secondAttribute="leading" constant="50" id="Zi2-42-zrK"/>
+                            <constraint firstItem="rvl-DQ-wq1" firstAttribute="trailing" secondItem="dyy-KM-vPd" secondAttribute="trailing" constant="50" id="a18-YP-maV"/>
+                            <constraint firstItem="rvl-DQ-wq1" firstAttribute="bottom" secondItem="6Pt-4m-rKl" secondAttribute="bottom" constant="100" id="f55-lo-BU1"/>
+                            <constraint firstItem="fIY-Ae-ENj" firstAttribute="top" secondItem="1DU-kY-E70" secondAttribute="bottom" constant="100" id="gHw-O5-dQ9"/>
+                            <constraint firstItem="fIY-Ae-ENj" firstAttribute="leading" secondItem="rvl-DQ-wq1" secondAttribute="leading" constant="50" id="lHj-bC-VYI"/>
+                            <constraint firstItem="rvl-DQ-wq1" firstAttribute="trailing" secondItem="pLo-JK-ODw" secondAttribute="trailing" constant="50" id="p31-XH-WK8"/>
+                            <constraint firstItem="pLo-JK-ODw" firstAttribute="top" secondItem="rvl-DQ-wq1" secondAttribute="top" constant="50" id="qTx-R4-ajz"/>
+                            <constraint firstItem="1DU-kY-E70" firstAttribute="centerX" secondItem="kvF-Yi-oVl" secondAttribute="centerX" id="vnM-vC-MOA"/>
+                            <constraint firstItem="dyy-KM-vPd" firstAttribute="top" secondItem="pLo-JK-ODw" secondAttribute="bottom" constant="50" id="zo1-in-acB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0X2-02-ItF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XwP-Oh-HV2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-828" y="4"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rock__Paper___Scissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tiy-H6-Cet">
+                                <rect key="frame" x="5" y="109" width="383" height="69"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Rock">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=", ">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Paper">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="or">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Scissors">
+                                        <attributes>
+                                            <font key="NSFont" size="26" name=".SFNS-Bold"/>
+                                            <font key="NSOriginalFont" size="26" name="SamaMalayalam-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcL-Uk-xXF">
+                                <rect key="frame" x="50" y="391" width="293" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play">
+                                    <color key="baseBackgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" id="VLA-H2-rto">
+                                <rect key="frame" x="50" y="228" width="293" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                <menu key="menu" id="duG-wa-eta">
+                                    <children>
+                                        <command title="🪨" id="OB1-4Z-elY"/>
+                                        <command title="📄" id="coi-LA-fTF"/>
+                                        <command title="✂️" id="yW6-UI-0zi"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tiy-H6-Cet" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="2hC-1R-JuR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qcL-Uk-xXF" secondAttribute="trailing" constant="50" id="Cfm-M9-xpg"/>
+                            <constraint firstItem="qcL-Uk-xXF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I7w-HD-xmM"/>
+                            <constraint firstItem="Tiy-H6-Cet" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="N3M-wn-w4Q"/>
+                            <constraint firstItem="VLA-H2-rto" firstAttribute="top" secondItem="Tiy-H6-Cet" secondAttribute="bottom" constant="50" id="PXY-aA-rLj"/>
+                            <constraint firstItem="qcL-Uk-xXF" firstAttribute="top" secondItem="Tiy-H6-Cet" secondAttribute="bottom" constant="50" id="Pdl-eH-XeF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tiy-H6-Cet" secondAttribute="trailing" constant="5" id="Sle-fW-6ry"/>
+                            <constraint firstItem="qcL-Uk-xXF" firstAttribute="top" secondItem="VLA-H2-rto" secondAttribute="bottom" constant="50" id="hzP-Qq-0Wb"/>
+                            <constraint firstItem="qcL-Uk-xXF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="wmc-zi-DRh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="17.557251908396946" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
